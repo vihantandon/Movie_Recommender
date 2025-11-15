@@ -1,0 +1,277 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.App {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.App-header {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 2rem;
+  text-align: center;
+  color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.App-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.App-header p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+.tab-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 2rem;
+}
+
+.tab {
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid transparent;
+  color: white;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tab:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+.tab.active {
+  background: white;
+  color: #667eea;
+  border-color: white;
+}
+
+.content {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.predict-section, .recommend-section {
+  background: white;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+  color: #667eea;
+  margin-bottom: 2rem;
+  font-size: 1.8rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #333;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.select-input, .number-input {
+  width: 100%;
+  padding: 0.8rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+.select-input:focus, .number-input:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+.btn-primary {
+  width: 100%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  margin-top: 1rem;
+}
+
+.btn-primary:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.btn-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.error-message {
+  background: #fee;
+  color: #c33;
+  padding: 1rem;
+  border-radius: 10px;
+  margin-top: 1rem;
+  border-left: 4px solid #c33;
+}
+
+.result-card {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 2rem;
+  border-radius: 15px;
+  margin-top: 2rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.result-card h3 {
+  color: white;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.result-item {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.result-item strong {
+  display: inline-block;
+  width: 150px;
+}
+
+.rating-value {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ffd700;
+  margin-left: 1rem;
+}
+
+.rating-stars {
+  text-align: center;
+  font-size: 2rem;
+  margin-top: 1rem;
+}
+
+.recommendations-list {
+  margin-top: 2rem;
+}
+
+.recommendations-list h3 {
+  color: #667eea;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.recommendation-card {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+  border: 2px solid transparent;
+}
+
+.recommendation-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+  border-color: #667eea;
+}
+
+.rank {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.movie-info {
+  flex: 1;
+}
+
+.movie-info h4 {
+  color: #333;
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.genres {
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 0.8rem;
+}
+
+.rating-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.recommendation-card .rating-value {
+  font-size: 1.2rem;
+  color: #667eea;
+  margin-left: 0;
+}
+
+.recommendation-card .rating-stars {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .App-header h1 {
+    font-size: 1.8rem;
+  }
+  
+  .content {
+    padding: 1rem;
+  }
+  
+  .predict-section, .recommend-section {
+    padding: 1.5rem;
+  }
+  
+  .recommendation-card {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .result-item strong {
+    display: block;
+    width: 100%;
+    margin-bottom: 0.3rem;
+  }
+}
